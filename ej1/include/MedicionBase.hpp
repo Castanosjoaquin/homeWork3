@@ -8,6 +8,7 @@ class MedicionBase: public IMediciones
 protected:
     unique_ptr<float> tiempoMedicion; 
 public: 
+    MedicionBase(); 
     MedicionBase(float tiempo);
     MedicionBase(const MedicionBase& medicion); // contructor de copia 
     virtual ~MedicionBase() = default;

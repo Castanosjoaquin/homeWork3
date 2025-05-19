@@ -7,7 +7,7 @@ class Presion: public MedicionBase
 public: 
     float presionEstatica; //p 
     float presionDinamica; //q
-
+    Presion(); 
     Presion( float p,float q, float t );
     Presion(const Presion& presion) ;// contructor de copia 
     ~Presion() = default;

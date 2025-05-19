@@ -1,11 +1,14 @@
 #include "../include/MedicionBase.hpp" 
 
-MedicionBase::MedicionBase(float tiempo){ 
-    this->tiempoMedicion = make_unique<float>(tiempo);
-}
-MedicionBase::MedicionBase(const MedicionBase& medicion){ 
-    this->tiempoMedicion = make_unique<float>(*medicion.tiempoMedicion); 
-}//creo un puntero nuevo distinto al del objeto
+MedicionBase::MedicionBase(): 
+    tiempoMedicion{make_unique<float>(0.0)}{} //contructor para objetos vacios
+
+MedicionBase::MedicionBase(float tiempo):
+    tiempoMedicion{make_unique<float>(tiempo)}{}//un atributo que es unique ptr se debe inicializar de esta manera
+
+MedicionBase::MedicionBase(const MedicionBase& medicion):
+    tiempoMedicion{make_unique<float>(*medicion.tiempoMedicion)}{}
+    //creo un puntero nuevo distinto al del objeto
 
 float MedicionBase::getTiempo(){ 
     return *this->tiempoMedicion; 

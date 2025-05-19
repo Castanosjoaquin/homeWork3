@@ -8,11 +8,11 @@ public:
     Presion presion; // p 
     Posicion posicion; //q
 
-
+    SaveFlightDate(); 
     SaveFlightDate(const Presion& p, const Posicion& q);
     ~SaveFlightDate() = default;
-    void serialiar(ofstream& out); 
-    void deserializar(ifstream& out); 
+    void serializar(ofstream& out); 
+    void deserializar(ifstream& in); 
     void imprimir(); 
 
 

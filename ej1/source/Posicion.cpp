@@ -1,5 +1,8 @@
 #include "../include/Posicion.hpp"
 
+Posicion::Posicion(): 
+    MedicionBase(), latitud{0.0},longitud{0.0}, altitud{0.0}{}
+
 Posicion::Posicion(float lat,float lon, float alt, float t): 
     MedicionBase(t), latitud{lat}, longitud{lon}, altitud{alt}{}
  
@@ -10,20 +13,21 @@ void Posicion::serializar(ofstream& out){
     out.write(reinterpret_cast<char*> (&latitud),sizeof(latitud));
     out.write(reinterpret_cast<char*> (&altitud),sizeof(altitud));
     out.write(reinterpret_cast<char*> (&longitud),sizeof(longitud));
-    out.write(reinterpret_cast<char*> (&tiempoMedicion),sizeof(tiempoMedicion));
+    MedicionBase::serializar(out);
 }
 
-void Posicion::deserializar(ifstream& out){ 
-    out.read(reinterpret_cast<char*> (&latitud),sizeof(latitud));
-    out.read(reinterpret_cast<char*> (&altitud),sizeof(altitud));
-    out.read(reinterpret_cast<char*> (&longitud),sizeof(longitud));
-    out.read(reinterpret_cast<char*> (&tiempoMedicion),sizeof(tiempoMedicion));
+void Posicion::deserializar(ifstream& in){ 
+    in.read(reinterpret_cast<char*> (&latitud),sizeof(latitud));
+    in.read(reinterpret_cast<char*> (&altitud),sizeof(altitud));
+    in.read(reinterpret_cast<char*> (&longitud),sizeof(longitud));
+    MedicionBase::deserializar(in);
 }
 
 void Posicion::imprimir( ){ 
-    cout<< "Latitud: "<< latitud<<endl; 
-    cout<< "Longitud: "<< longitud<<endl; 
-    cout<< "altitud: "<< altitud<<endl; 
-    cout<< "Tiempo: "<< *tiempoMedicion<<endl; 
+    cout<<"Posicion: "<<endl;
+    cout<< "    -Latitud: "<< latitud<<endl; 
+    cout<< "    -Longitud: "<< longitud<<endl; 
+    cout<< "    -altitud: "<< altitud<<endl; 
+    cout<< "    -Tiempo: "<< *tiempoMedicion<<endl; 
 
 }

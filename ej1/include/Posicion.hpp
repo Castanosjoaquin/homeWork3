@@ -8,7 +8,7 @@ public:
     float latitud; 
     float longitud; 
     float altitud; 
-    
+    Posicion() ; 
     Posicion(float lat,float lon, float alt, float t);
     Posicion(const Posicion& posicion); // contructor de copia
     ~Posicion()= default;

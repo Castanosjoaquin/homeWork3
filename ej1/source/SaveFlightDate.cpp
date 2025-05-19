@@ -1,9 +1,11 @@
 #include "../include/SaveFlightDate.hpp"
+SaveFlightDate::SaveFlightDate():
+    presion(), posicion(){}
 
 SaveFlightDate:: SaveFlightDate(const Presion& p, const Posicion& q): 
     presion{p}, posicion{q}{}
 
-void SaveFlightDate::serialiar(ofstream& out){ 
+void SaveFlightDate::serializar(ofstream& out){ 
     posicion.serializar(out);
     presion.serializar(out);
 }
