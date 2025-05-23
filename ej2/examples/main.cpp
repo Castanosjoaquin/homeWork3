@@ -1,8 +1,8 @@
-#include "includes/ProcesadorFigura.hpp"
-#include "includes/Elipse.hpp"
-#include "includes/Punto.hpp"
-#include "includes/Rectangulo.hpp"
-#include "includes/Circulo.hpp"
+#include "../includes/ProcesadorFigura.hpp"
+#include "../includes/Elipse.hpp"
+#include "../includes/Punto.hpp"
+#include "../includes/Rectangulo.hpp"
+#include "../includes/Circulo.hpp"
 
 int main(){ 
     Circulo c; 
