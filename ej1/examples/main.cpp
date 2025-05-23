@@ -10,16 +10,18 @@ int main(){
     cout<<"Info de date"<<endl; 
     date.imprimir();  
 
+    //serializo
     ofstream out("FlightData.dat", ios::binary); 
     if(out.is_open()){ 
         date.serializar(out);
     }
     out.close();
- 
+    
+    //impirmo un flight data vacio
     SaveFlightDate date2; 
     cout<< "\nInfo de date2 antes deserializar la info de date " <<endl; 
     date2.imprimir();
-
+    //pruebo imprimir despues de deserializar
     cout<<"\nInfo date2 despues de deserializar la info de date"<<endl;
     ifstream in("FlightData.dat", ios::binary); 
     if(in.is_open()){ 
