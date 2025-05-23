@@ -27,7 +27,6 @@ void Posicion::imprimir( ){
     cout<<"Posicion: "<<endl;
     cout<< "    -Latitud: "<< latitud<<endl; 
     cout<< "    -Longitud: "<< longitud<<endl; 
-    cout<< "    -altitud: "<< altitud<<endl; 
+    cout<< "    -Altitud: "<< altitud<<endl; 
     cout<< "    -Tiempo: "<< *tiempoMedicion<<endl; 
-
 }

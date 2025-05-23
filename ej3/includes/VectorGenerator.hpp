@@ -24,21 +24,20 @@ public:
         if constexpr(is_arithmetic_v<T>){
             result += "[";
             for(size_t i=0; i<vec.size();i++){ 
-                string strDouble= to_string(vec[i]); // si sumo el string derecho me lo pone con 6 decimales
-                size_t pointIndex = strDouble.find('.');
-                result += strDouble.substr(0, pointIndex + 2);
+                string strDouble= to_string(vec[i]); // si sumo la funcion to string derecho me lo pone con 6 decimales
+                size_t pointIndex = strDouble.find('.'); //busco el indice del punto en el str
+                result += strDouble.substr(0, pointIndex + 2); //creo un substring hasta dos decimales
 
-                if( i != vec.size()-1){ 
+                if( i != vec.size()-1){ //si no estoy en la ultima posicion pongo la coma
                     result +=","; 
                 }
             }
-            result+="],";
-             
+            result+="],";    
         }
         if constexpr(is_same_v<T, string>){ 
             result += "[";
             for(size_t i=0; i<vec.size(); i++){ 
-                result += "\"" + vec[i] + "\"";
+                result += "\"" + vec[i] + "\"";// para poder imprimir las comillas, estas debene escaparse
                 if( i != vec.size()-1){ 
                     result +=","; 
                 }
@@ -50,11 +49,10 @@ public:
             for(size_t j =0; j< vec.size(); j++){ 
                 result += "      [";
                 for(size_t i =0; i< vec[j].size(); i++){
-                    result +=  to_string(vec[j][i]); 
+                    result +=  to_string(vec[j][i]); // to string con int no me genera el problema de antes
                     if( i != vec.size()-1){ 
                     result +=","; 
-                }
-               
+                    }
                 }
                 result +="]";
                 if( j != vec.size()-1){ 
@@ -62,7 +60,6 @@ public:
             }
             result += "\n      ]";
         }
-
         return result; 
     }  
 };

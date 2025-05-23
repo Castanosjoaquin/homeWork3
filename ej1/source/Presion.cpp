@@ -1,13 +1,13 @@
 #include "../include/Presion.hpp"
 
 Presion::Presion(): 
-    MedicionBase(), presionEstatica{0.0}, presionDinamica{0.0}{}
+    MedicionBase(), presionEstatica{0.0}, presionDinamica{0.0}{} //inicializacion default
 
 Presion::Presion(float p, float q, float t): 
     MedicionBase(t), presionEstatica{p}, presionDinamica{q}{}
  
 Presion::Presion(const Presion& presion): 
-    MedicionBase(presion), presionEstatica{presion.presionEstatica}, presionDinamica{presion.presionDinamica}{}
+    MedicionBase(presion), presionEstatica{presion.presionEstatica}, presionDinamica{presion.presionDinamica}{}// contrucion por copia
 
 void Presion::serializar(ofstream& out){ 
     out.write(reinterpret_cast<char*>(&presionEstatica),sizeof(presionEstatica));

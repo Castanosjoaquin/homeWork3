@@ -8,10 +8,10 @@ MedicionBase::MedicionBase(float tiempo):
 
 MedicionBase::MedicionBase(const MedicionBase& medicion):
     tiempoMedicion{make_unique<float>(*medicion.tiempoMedicion)}{}
-    //creo un puntero nuevo distinto al del objeto
+    //creo un puntero nuevo distinto al del objeto para poder copiar el objeto
 
 float MedicionBase::getTiempo(){ 
-    return *this->tiempoMedicion; 
+    return *tiempoMedicion; 
 } 
 
 void MedicionBase::serializar(ofstream& out) {

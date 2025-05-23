@@ -3,7 +3,7 @@
 #include <string>
 
 #define _USE_MATH_DEFINES
-#include <cmath>
+#include <cmath> //para usar la constante pi
 
 #include "Circulo.hpp"
 #include "Elipse.hpp"
@@ -13,7 +13,7 @@
 
 using namespace std; 
 
-
+//segun el tipo que T sea calcula el area de manera diferentes, si no es una conocida no la calcula
 template<typename T>
 class ProcesadorFigura{
 public:

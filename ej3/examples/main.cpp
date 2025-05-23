@@ -20,6 +20,14 @@ int main (){
     v3.add({3,4});
     JsonCreator j; 
     j.printJson(v1,v2,v3); 
+
+
+    cout<<endl; 
+    JsonCreator j2;
+    j2.asociar(v1); 
+    j2.asociar(v2); 
+    j2.asociar(v3); 
+    j2.printJson();
     
     return 0;
  }
