@@ -1,7 +1,7 @@
 #include "../includes/Rectangulo.hpp"
 
-Rectangulo::Rectangulo(double w, double h):
-    width(w), height{h}{}
+Rectangulo::Rectangulo(double w, double h, double x, double y):
+    width(w), height{h}, posicion{Punto(x,y)}{}
 
 
 void Rectangulo::setHeight(double h) {
@@ -18,4 +18,8 @@ double Rectangulo::getWidth() const {
 
 double Rectangulo::getHeight() const {
     return height;
+}
+
+Punto Rectangulo::getPosicion(){ 
+    return posicion; 
 }

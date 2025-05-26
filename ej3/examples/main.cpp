@@ -36,11 +36,12 @@ int main (){
     v6.add({2,4}); 
     v6.add({6,7}); 
     cout<<endl; 
+
     JsonCreator j2;
     j2.asociar(v4); 
     j2.asociar(v5); 
     j2.asociar(v6); 
     j2.printJson();
-    
+
     return 0;
  }

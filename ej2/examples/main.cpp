@@ -16,9 +16,9 @@ int main(){
     cout << "Area del rectangulo: " << ProcesadorFigura<Rectangulo>::calcArea(r) << std::endl;
     cout << "Area del punto: " << ProcesadorFigura<Punto>::calcArea(p) << std::endl;
 
-    Circulo c2(2);
-    Elipse e2(2,6); 
-    Rectangulo r2(2,8); 
+    Circulo c2(2,1,5);
+    Elipse e2(2,6,5,4); 
+    Rectangulo r2(2,8,7,8); 
     Punto p2(5,1);
 
     cout<<"Area de figuras particulares"<<endl;
