@@ -7,8 +7,7 @@
 
 class JsonCreator
 {
-private:    
-
+private:   
     vector<string> data; 
 public:
     JsonCreator():
